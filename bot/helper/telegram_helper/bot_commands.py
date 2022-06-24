@@ -51,6 +51,7 @@ class _BotCommands:
         self.RssSettingsCommand = f'rssset{CMD_INDEX}'
         self.WayBackCommand = f'wayback{CMD_INDEX}'
         self.VirusTotalCommand = f'virustotal{CMD_INDEX}'
+        self.HashCommand = f'hash{CMD_INDEX}'
         self.EvalCommand = f'eval{CMD_INDEX}'
         self.ExecCommand = f'exec{CMD_INDEX}'
         self.ClearLocalsCommand = f'clearlocals{CMD_INDEX}'
