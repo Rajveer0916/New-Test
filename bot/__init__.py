@@ -569,6 +569,17 @@ try:
 except:
     SEARCH_PLUGINS = None
 try:
+    VIRUSTOTAL_API = getConfig('VIRUSTOTAL_API')
+    if len(VIRUSTOTAL_API) < 4: raise KeyError
+except KeyError:
+    logging.warning('VIRUSTOTAL_API not provided.')
+    VIRUSTOTAL_API = None
+
+try:
+    VIRUSTOTAL_FREE = getConfig('VIRUSTOTAL_FREE').lower() == 'true'
+except KeyError:
+    VIRUSTOTAL_FREE = True
+try:
     HEROKU_API_KEY = getConfig('HEROKU_API_KEY')
     HEROKU_APP_NAME = getConfig('HEROKU_APP_NAME')
     if len(HEROKU_API_KEY) == 0 or len(HEROKU_APP_NAME) == 0:
