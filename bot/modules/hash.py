@@ -83,7 +83,7 @@ def hash(update, context):
         return editMessage("Hashing error. Check Logs.", sent)
     # hash text
     finishedText = "🍆 File: <code>{}</code>\n".format(message.reply_to_message.document.file_name)
-    finishedText += "🍇 Size: <code>{}</code>\n".format(HumanBytes(message.reply_to_message.document.file_size))
+    finishedText += "🍇 Size: <code>{}</code>\n".format(HumanBytes(message.reply_to_message.document.size))
     finishedText += "🍓 MD5: <code>{}</code>\n".format(md5.hexdigest())
     finishedText += "🍌 SHA1: <code>{}</code>\n".format(sha1.hexdigest())
     finishedText += "🍒 SHA224: <code>{}</code>\n".format(sha224.hexdigest())
