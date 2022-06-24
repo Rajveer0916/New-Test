@@ -198,7 +198,7 @@ def virustotal(update, context):
             maxsize = 210*1024*1024
             if VIRUSTOTAL_FREE: maxsize = 32*1024*1024
             if message.reply_to_message.document.file_size > maxsize:
-                return sendMessage(f"File limit is {humanbytes(maxsize)}", context.bot, update.message)
+                return sendMessage(f"File limit is {humanbytes(maxsize)}", context.bot, update)
             try:
                 sent = sendMessage(f"Trying to download. Please wait.", context.bot, update.message)
                 filename = os.path.join(VtPath, message.reply_to_message.document.file_name)
