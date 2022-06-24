@@ -150,7 +150,7 @@ def virustotal(update, context):
     if not os.path.exists("Virustotal"): os.makedirs("Virustotal")
     if not os.path.exists(VtPath): os.makedirs(VtPath)
     file = None
-    sent = sendMessage('Running VirusTotal Scan. Wait for finish.', context.bot, update)
+    sent = sendMessage('Running VirusTotal Scan. Wait for finish.', context.bot, update.message)
     if message.reply_to_message and message.reply_to_message.document:
         maxsize = 210*1024*1024
         if VIRUSTOTAL_FREE: maxsize = 32*1024*1024
