@@ -213,7 +213,7 @@ def virustotal(update, context):
     ret = getResultAsReadable(get_result(link))
     try: os.remove(link)
     except: pass
-else:
+    else:
     return editMessage(ret, sent)
 
 
