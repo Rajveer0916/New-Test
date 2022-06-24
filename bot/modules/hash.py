@@ -12,7 +12,7 @@ def HumanBytes(size):
     if not size: return ""
     power = 2 ** 10
     n = 0
-    Dic_powerN = {0: " ", 1: "K", 2: "M", 3: "G", 4: "T"}
+    Dic_powerN = {0: "B", 1: "K", 2: "M", 3: "G", 4: "T"}
     while size > power:
         size /= power
         n += 1
@@ -83,7 +83,7 @@ def hash(update, context):
         return editMessage("Hashing error. Check Logs.", sent)
     # hash text
     finishedText = "🍆 File: <code>{}</code>\n".format(message.reply_to_message.document.file_name)
-    finishedText += "🍇 Size: <code>{}</code>\n".format(HumanBytes(message.reply_to_message.document.size))
+    finishedText += "🍇 Size: <code>{}</code>\n".format(HumanBytes(message.reply_to_message.document.file_size))
     finishedText += "🍓 MD5: <code>{}</code>\n".format(md5.hexdigest())
     finishedText += "🍌 SHA1: <code>{}</code>\n".format(sha1.hexdigest())
     finishedText += "🍒 SHA224: <code>{}</code>\n".format(sha224.hexdigest())
